@@ -1,0 +1,29 @@
+name: Deploy Workflow
+
+ 
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select an environment'
+        required: true
+        default: 'development'
+        options: ['a', 'development']
+ 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+ 
+
+      - name: Print selected environment
+        run: echo "Deploying to ${{ github.event.inputs.environment }}"
+
+ 
+
+      # Here you can add your deployment steps, conditionally run them based on the selected environment if necessary.
