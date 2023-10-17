@@ -9,7 +9,11 @@ on:
         description: 'Select an environment'
         required: true
         default: 'development'
-        options: ['a', 'development']
+        options:
+         - a
+         - b
+         - c
+         - development
  
 
 jobs:
